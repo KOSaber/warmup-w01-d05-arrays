@@ -37,21 +37,28 @@ console.log(integers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]));
 If the input array is empty or null, return an empty array.
 
 //Solution 
-
 function integers(numbers){
-  let sum =0;
+  
+  let sum = 0;
+  var res = [];
+  
   if(numbers == null || numbers.length == 0)
       return numbers=[];
+  
   for(i = 0; i < numbers.length; i++){
       
-    if(numbers[i] > 0){
-      console.log(numbers[i]);
+    if(numbers[i] >= 0){
+      res.push(numbers[i]);
     }else{
          sum += numbers[i];
          //console.log(sum);
     }
   }
+  console.log(res);
+  console.log(res.length);
  return sum;
 }
+
+console.log(integers([1, 2, 0, 4, 5, 6, 7, -8, 9, 10, -11, -12, -13, -14, -15]));
 
 console.log(integers([]));
